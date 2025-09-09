@@ -1,0 +1,156 @@
+/* =============================================================
+     TASKS
+      1.) Pick a Coolors palette and define: --base, --text, --secondary, --primary, --accent using CSS variables
+      2.) Implement background image in .hero and add parallax-like effect
+      3.) Apply colours using CSS variables & var( )
+      4.) Ensure WCAG AA contrast
+   ============================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root{
+    --nav-color: #ffcb00;
+    --hero-bg: #661294;
+    --stats-bg: #171b49;
+    --text-hero : #ffcc00;
+    --cl-card : #00276c;
+    --text-card: #ffe697;
+    --button-bg : #ffcc00;
+    --texttext-hero: #1a3565;
+    --textbg-hero: #1a3565
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: .5rem;
+    background: #000;
+    color: #fff;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav {
+    background-color: var(--nav-color);
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .75rem 1rem;
+}
+
+.nav a {
+    color: #02305e;
+    font-weight: bold;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+}
+
+.hero {
+    background-image: url('../img/pexels-black-ice-1314544.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text-hero);
+    min-height: 60vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+
+}
+
+.hero h1 {
+    background-color: var(--textbg-hero);
+    font-size: clamp(2.25rem, 4vw + 1rem, 4.25rem);
+    margin: 0 0 .5rem;
+}
+
+.hero p {
+    background-color: var(--texttext-hero);
+    padding: 0.5rem;
+    max-width: 62ch;
+    margin: 0 auto 1.25rem;
+}
+
+.btn {
+    background-color: var(--button-bg);
+    color: #171b49;
+    display: inline-block;
+    padding: .85rem 1.15rem;
+    border-radius: .75rem;
+    font-weight: 700;
+}
+
+.stats {
+    background-color: var(--stats-bg);
+    color: #BADA55;
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stat {
+    background-color: var(--cl-card);
+    color: var(--text-card);
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.stat h3 {
+    margin: .25rem 0 0;
+    font-size: 2rem;
+}
+
+.stat p {
+    margin: 0;
+}
+
+footer {
+    padding: 2rem 1rem;
+    text-align: center;
+
+}
